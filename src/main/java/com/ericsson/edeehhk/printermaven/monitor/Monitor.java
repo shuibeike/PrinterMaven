@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.LinkedList;
 
 import com.ericsson.edeehhk.printermaven.device.Device;
+import com.ericsson.edeehhk.printermaven.device.DeviceController;
 
 public class Monitor implements Runnable {
 	private LinkedList<Device> devices;
@@ -41,15 +42,7 @@ public class Monitor implements Runnable {
 			}
 		}
 		
-		for(Device d : devices) {
-			d.updateOldtask();
-			try {
-				d.printlog(file);
-			} catch (IOException e) {
-				e.printStackTrace();
-				System.out.println("scan wrong!");
-			}
-		}
+		DeviceController.monitor(devices, file);
 	}
 	
 }

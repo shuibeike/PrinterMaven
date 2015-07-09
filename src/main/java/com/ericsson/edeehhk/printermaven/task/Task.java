@@ -1,17 +1,72 @@
 package com.ericsson.edeehhk.printermaven.task;
 
-public class Task implements Comparable<Task> {
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="tasks")
+public class Task implements Comparable<Task>, Serializable {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO) 
+	@Column(name="_id")
+	private int id;
+	
+	@Column(name="_name")
 	private String name;
+	@Column(name="_pages")
 	private int pages;
+	@Column(name="_processtime")
 	private int processtime;
+	@Column(name="_waittime")
 	private int waittime;
+	@Column(name="_starttime")
 	private long starttime;
+	@Column(name="_status")
+	private boolean status;
+	@Column(name="_deviceId")
+	private int deviceId;
+	
+	public Task() {
+		status = false;
+	}
 	
 	public Task(String name, int pages) {
 		super();
 		this.name = name;
 		this.pages = pages;
+		status = false;
 	}
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public int getDeviceId() {
+		return deviceId;
+	}
+
+	public void setDeviceId(int deviceId) {
+		this.deviceId = deviceId;
+	}
+
+	public boolean getStatus() {
+		return status;
+	}
+
+	public void setStatus(boolean status) {
+		this.status = status;
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -42,13 +97,11 @@ public class Task implements Comparable<Task> {
 	public void setStarttime(long starttime) {
 		this.starttime = starttime;
 	}
+	
 	public int compareTo(Task task) {
 		return (this.getPages() - task.getPages())*waittime;
 	}
 	
-	public void updateWaittime() {
-		waittime = (int)Math.ceil((double)(System.currentTimeMillis()-starttime)/1000);
-	}
 	@Override
 	public boolean equals(Object obj) {
 		if(!(obj instanceof Task)) {

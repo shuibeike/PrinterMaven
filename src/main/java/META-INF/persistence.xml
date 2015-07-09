@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><persistence xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
+  <persistence-unit name="printermaven" transaction-type="RESOURCE_LOCAL">
+    <provider>org.apache.openjpa.persistence.PersistenceProviderImpl</provider>
+    <class>com.ericsson.edeehhk.printermaven.task.Task</class>
+    <class>com.ericsson.edeehhk.printermaven.device.Device</class>
+    <!-- <class>com.ericsson.edeehhk.printermaven.task.Task</class> -->
+          <!-- Device should behind in Task -->
+    <properties>
+      <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://127.0.0.1:5432/bmc"/>
+      <property name="javax.persistence.jdbc.user" value="bmc"/>
+      <property name="javax.persistence.jdbc.password" value="bmc"/>
+
+      
+      <property name="openjpa.Log" value="DefaultLevel=WARN, Runtime=WARN, Tool=INFO, SQL=TRACE"/>
+
+      <property name="openjpa.RemoteCommitProvider" value="sjvm"/>
+      
+      <property name="openjpa.DataCache" value="true(CacheSize=5000, SoftReferenceSize=100)"/>
+      
+      <property name="openjpa.QueryCache" value="true(CacheSize=5000, SoftReferenceSize=100)"/>
+     
+      <property name="openjpa.QueryCompilationCache" value="true"/>
+      <property name="openjpa.ConnectionFactoryProperties" value="PrettyPrint=true, PrettyPrintLineLength=100"/>
+      <property name="openjpa.FetchBatchSize" value="-1"/>
+      <property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema(foreignKeys=true)"/>
+      <property name="eclipselink.ddl-generation" value="create-tables"/>
+    </properties>
+  </persistence-unit>
+</persistence>

@@ -4,7 +4,10 @@ import java.util.Collections;
 import java.util.LinkedList;
 
 import com.ericsson.edeehhk.printermaven.device.Device;
+import com.ericsson.edeehhk.printermaven.device.DeviceController;
+import com.ericsson.edeehhk.printermaven.postgre.OpenJPATools;
 import com.ericsson.edeehhk.printermaven.task.Task;
+import com.ericsson.edeehhk.printermaven.task.TaskController;
 
 public class Dispatch implements Runnable {
 	private LinkedList<Device> devices;
@@ -28,10 +31,7 @@ public class Dispatch implements Runnable {
 //		System.out.println("---------------------------");
 		if(!devices.isEmpty() && !tasks.isEmpty()) {
 			Collections.sort(devices);
-			for(Task t : tasks) {
-				
-				t.updateWaittime();
-			}
+			TaskController.updateWaittime(tasks);
 			Collections.sort(tasks);
 			for(Device d : devices) {
 				if(tasks.isEmpty()) {
@@ -45,13 +45,16 @@ public class Dispatch implements Runnable {
 					if(processtime >= t.getProcesstime()*1000) {
 //						System.out.println(processtime+":"+t.getProcesstime());
 						d.setStatus("idle");
+						t.setStatus(true);
+						t.setDeviceId(d.getId());
+						new OpenJPATools().save(t);
 					}
 				}
 
 				if(d.getStatus().equals("idle")) {
 					Task t = tasks.pollFirst();
 //					System.out.println(d.getName()+" "+t.getPages()+" "+tasks.size());
-					d.print(t);
+					DeviceController.print(d, t);
 				}
 			}
 		}

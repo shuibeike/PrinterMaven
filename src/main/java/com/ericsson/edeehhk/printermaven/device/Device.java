@@ -1,5 +1,6 @@
 package com.ericsson.edeehhk.printermaven.device;
 
+import java.beans.Transient;
 import java.io.Serializable;
 import java.util.LinkedList;
 
@@ -9,7 +10,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 
 import com.ericsson.edeehhk.printermaven.task.Task;
 

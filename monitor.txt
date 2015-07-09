@@ -1,0 +1,63 @@
+2015-06-11 10:30:40
+2 is busy now and print history: 
+2 print 73bc13fd119c431a85bd2bf3517d7801, pages is 21, processtime is 11s, task waittime is 1s.
+
+2015-06-11 10:30:40
+d2 is busy now and print history: 
+d2 print ba579a971c1645979afea275939bac5d, pages is 85, processtime is 22s, task waittime is 0s.
+
+2015-06-11 10:30:40
+d3 is busy now and print history: 
+d3 print d4d7a9f7fe9a40a7bf8a34903996105e, pages is 21, processtime is 3s, task waittime is 0s.
+
+2015-06-11 15:58:23
+d1 is busy now and print history: 
+d1 print 4140b9df4c62428db38b3bfd1d707c06, pages is 79, processtime is 20s, task waittime is 1s.
+
+2015-06-11 15:58:23
+abc is busy now and print history: 
+abc print a8f0330008d54a06825f5afb1f83acc3, pages is 33, processtime is 7s, task waittime is 0s.
+
+2015-06-11 15:58:23
+d3 is busy now and print history: 
+d3 print a640bcb3d54d48a0bf33ac4b0942a9ca, pages is 52, processtime is 7s, task waittime is 0s.
+
+2015-06-11 15:58:23
+d4 is busy now and print history: 
+d4 print 9bebd9b161b54cf6bc77308152a30d71, pages is 34, processtime is 4s, task waittime is 0s.
+
+2015-06-11 15:58:53
+d1 is busy now and print history: 
+d1 print 4140b9df4c62428db38b3bfd1d707c06, pages is 79, processtime is 20s, task waittime is 1s.
+d1 print f16926158bc34c31a6ed029c81488cc2, pages is 67, processtime is 17s, task waittime is 1s.
+
+2015-06-11 15:58:53
+abc is busy now and print history: 
+abc print a8f0330008d54a06825f5afb1f83acc3, pages is 33, processtime is 7s, task waittime is 0s.
+abc print 7c6c670d2dda46b6847f001c1b841b91, pages is 1, processtime is 1s, task waittime is 0s.
+abc print cb5c6baa63ec43168382b33fae6f2a9c, pages is 31, processtime is 7s, task waittime is 0s.
+abc print ff98c8df7d914ed3964c9ada09e12f11, pages is 23, processtime is 5s, task waittime is 4s.
+abc print 77a141ccaa8d484f9fdb1642ecec1047, pages is 31, processtime is 7s, task waittime is 1s.
+abc print 1b00ef2f5da7435e86fff83488ccca09, pages is 96, processtime is 20s, task waittime is 2s.
+
+2015-06-11 15:58:53
+d3 is busy now and print history: 
+d3 print a640bcb3d54d48a0bf33ac4b0942a9ca, pages is 52, processtime is 7s, task waittime is 0s.
+d3 print e94480439baa481f9d59d168907b643f, pages is 53, processtime is 7s, task waittime is 0s.
+d3 print 9a3a5d041f14411abb4c2b35d603d3e8, pages is 85, processtime is 11s, task waittime is 1s.
+
+2015-06-11 15:58:53
+d4 is busy now and print history: 
+d4 print 9bebd9b161b54cf6bc77308152a30d71, pages is 34, processtime is 4s, task waittime is 0s.
+d4 print 7c89ef9d1b6244d0925a52d21e1e7ccf, pages is 32, processtime is 4s, task waittime is 3s.
+d4 print d376b88de292411f91ff3c13f128533a, pages is 84, processtime is 10s, task waittime is 0s.
+d4 print f4237f9f86d04a259842b4613b5a98c1, pages is 55, processtime is 7s, task waittime is 1s.
+
+2015-06-11 15:59:23
+d1 is busy now and print history: 
+d1 print f16926158bc34c31a6ed029c81488cc2, pages is 67, processtime is 17s, task waittime is 1s.
+
+2015-06-11 15:59:23
+abc is busy now and print history: 
+abc print 1b00ef2f5da7435e86fff83488ccca09, pages is 96, processtime is 20s, task waittime is 2s.
+
